@@ -1,0 +1,23 @@
+/* pages/test1/pages/test1/test3/article/article.wxss */
+.page{
+  display:flex;
+  flex-direction:column;
+  align-items:center
+}
+.page .page_title{
+  text-align: center;
+  font-size:50rpx;
+  margin-bottom:50rpx;
+}
+.page .page_body{
+  margin-left:30rpx;
+  margin-right:30rpx;
+  padding:50rpx,50rpx;
+  text-align: left;
+  background-color:#1179f0;
+  width: 90%;
+}
+
+.page_body image{
+  width:100%;
+}
