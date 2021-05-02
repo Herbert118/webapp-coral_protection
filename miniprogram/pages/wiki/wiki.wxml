@@ -1,2 +1,5 @@
-<!--pages/wiki/wiki.wxml-->
-<text>pages/wiki/wiki.wxml</text>
+<view class = "page">
+  <view class = "page_head">
+  
+  </view>
+</view>

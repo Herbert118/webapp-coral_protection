@@ -2,9 +2,7 @@
 .page{
   display:flex;
   flex-direction: column;
-  align-items: center;
-  
-  
+  align-items: center; 
 }
 
 .page_head{
@@ -12,12 +10,11 @@
   flex-direction: column;
   align-items: center;
   width:100%;
-  background-color: rgb(0, 174, 255)!important;
+ 
 }
 
 .page_head .imagecon{  
   width:100%;
-
 }
 
 .page_head .title{
@@ -29,7 +26,23 @@
   background-color: rgba(14, 165, 235, 0.849);
 }
 
+
+.page_title{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  margin:30rpx 0;
+  height:100rpx;
+  border-top:solid 2rpx rgba(0, 0, 0, 0.1);
+  border-bottom:solid 2rpx rgba(0, 0, 0, 0.1);
+  font-size:50rpx;
+  color: rgb(119, 164, 247);
+}
+
+
 .articlecon{
+  width:100%;
   display:flex;
   flex-direction: column;
   justify-content: space-around;
@@ -38,37 +51,52 @@
 }
 .article{
   width:85%;
-  height: 125px;
+  height: 300rpx;
   border-radius: 10px; 
   background-color: rgb(177, 234, 248);
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
+  overflow: hidden;
   
 }
 
 .article .title{
   width:100%;
-  height: 15px;
-  font:  bold black;
-  margin-left:50rpx;
+  height: 50rpx;
+  font:  bold  20rpx;
+  color:rgb(13, 90, 235);
+  margin:20rpx 0 0 50rpx ;
 }
 .article .imagescon{
-  width:200rpx;
+  width:250rpx;
+  margin:0 20rpx
   
-  margin-left:50rpx;
-  margin-right:50rpx;
+  
 }
 
 .article .info{
-  margin-right:50rpx;
+  width:100%;
   display: flex;
   justify-content: space-between;
-  
+  height:200rpx;
 }
 .article .abstract{
   width:300rpx;
   color:gray;
   font-size:13px;
 
+}
+
+.test{
+  margin-top :50rpx;
+}
+
+.page_foot{
+  width: 70%;
+  text-align: center;
+  margin:50rpx;
+  color: rgb(7, 127, 182);
+  border-top:solid rgba(0, 0, 0, 0.1) 2rpx
 }

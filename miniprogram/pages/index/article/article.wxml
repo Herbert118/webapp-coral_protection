@@ -1,5 +1,4 @@
 
-<text>pages/test1/pages/test1/test3/article/article.wxml</text>
 <view class = "page">
   <view class = "page_title">
     {{title}}
