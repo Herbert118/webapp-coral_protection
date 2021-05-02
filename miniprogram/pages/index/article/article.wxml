@@ -4,7 +4,7 @@
     {{title}}
   </view>
   <view class = "page_body">
-    <block wx:for = "{{paras}}" wx:key wx:for-item="item" wx:for-index="index">
+    <block wx:for = "{{paras}}" wx:key wx:for-item="item" wx:for-index="index" wx:key="index">
     <image src = "{{item.img}}" mode="widthFix"></image>
     <text>{{item.text}}</text>
     </block>

@@ -37,7 +37,7 @@
   border-top:solid 2rpx rgba(0, 0, 0, 0.1);
   border-bottom:solid 2rpx rgba(0, 0, 0, 0.1);
   font-size:50rpx;
-  color: rgb(119, 164, 247);
+  color: rgba(14, 165, 235, 0.849);
 }
 
 

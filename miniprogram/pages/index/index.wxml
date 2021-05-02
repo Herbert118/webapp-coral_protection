@@ -19,7 +19,7 @@
     <text>科普文章</text>
   </view>
 
-  <view class="articlecon" bindtap="navtoarticle" wx:for="{{articles}}" wx:for-index="index" id="{{index+1}}">
+  <view class="articlecon" bindtap="navtoarticle" wx:for="{{articles}}" wx:for-index="index" id="{{index+1}}" wx:key="index">
     <view class="article">
       <view class="title">
         <text>{{item.title}}</text>

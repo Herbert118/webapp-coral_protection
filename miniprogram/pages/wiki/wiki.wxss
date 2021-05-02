@@ -1,1 +1,75 @@
-/* pages/wiki/wiki.wxss */
+.page{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width:100%;
+}
+
+.page_head{
+  width:100%;
+  background-color: cornflowerblue;
+  height: 100rpx;
+  display:flex ;
+  justify-content: center;
+  align-items: center;
+}
+
+.page_head .search{
+  height:100rpx;
+  border-right-style: 10rpx;
+}
+
+.page_title{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  margin:40rpx 0;
+  height:100rpx;
+  border-top:solid 2rpx rgba(0, 0, 0, 0.1);
+  border-bottom:solid 2rpx rgba(0, 0, 0, 0.1);
+  font-size:50rpx;
+  color: rgb(119, 164, 247);
+}
+
+.test{
+  display: flex;
+  justify-content: center;
+  margin-top:50rpx;
+}
+
+.page_body{
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width:100%;
+  flex-wrap:wrap;
+}
+
+
+.wikicon{
+  width: 40%;
+  display:flex;
+  flex-direction: column;
+  height:300rpx;
+  background-color: cornflowerblue;
+  border-radius: 18rpx;
+  margin:40rpx 37rpx;
+}
+.wikicon .imagecon{
+  width:100%;
+  overflow: hidden;
+  height:250rpx;
+  border-radius: 18rpx;
+}
+.wikicon image{
+height:250rpx;
+  
+}
+.wikicon .name{
+  width:100%;
+  font-size:35rpx;
+  text-align: center;
+  color:white
+}
+

@@ -1,3 +1,4 @@
 /cloudfunctions/articleList/node_modules
 /cloudfunctions/login/node_modules
 /cloudfunctions/article/node_modules
+node_modules

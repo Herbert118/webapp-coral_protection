@@ -1,23 +1,70 @@
+
 // pages/wiki/wiki.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
+ 
   data: {
-
+    inputShowed: false,
+    inputVal: "",
+    wikis:[]
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  showInput: function () {
+    this.setData({
+        inputShowed: true
+    });
+},
+hideInput: function () {
+  this.setData({
+      inputVal: "",
+      inputShowed: false
+  });
+},
+clearInput: function () {
+  this.setData({
+      inputVal: ""
+  });
+},
+inputTyping: function (e) {
+  this.setData({
+      inputVal: e.detail.value
+  });
+},
+navToForm(){
+  wx.navigateTo({
+    url: './wikiForm/wikiForm',
+  })
+},
+ 
+navToWiki(e){
+  var id = e.currentTarget.id;
+  wx.navigateTo({
+    url: `./wikiDetail/wikiDetail?id=${id}`,
+  })
+},
+
   onLoad: function (options) {
+    var that = this;
+    wx.cloud.callFunction({
+      name:"wiki",
+      data:{
+        list:true
+      },
+      success(res){
+        console.log(res)
+        that.setData({
+          wikis:res.result.wikis
+        })
+      },
+      fail(err){
+        console.log(err);
+      }
+    });
+  
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+
   onReady: function () {
 
   },
@@ -26,7 +73,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.onLoad();
   },
 
   /**
