@@ -28,19 +28,18 @@ Page({
       return;  
     }
     const db = wx.cloud.database()
-    var counts = await db.collection("articles").count();
+    var counts = await db.collection("wiki").count();
     console.log(counts.total);
-    db.collection("articles").add({  
+    db.collection("wiki").add({  
       data:{
         _id:counts.total+1+"", 
-        title:that.data.formInfo.title,
-        abstract:that.data.formInfo.abstract,
+        name:that.data.formInfo.title,
         body:that.data.formInfo.body,
         imgRoute:that.data.imgUrls.join("_")
       }}).then((res)=>{
         console.log(res);
         wx.navigateBack({
-          delta:1
+          delta: 1
         })
       })
   },
@@ -63,7 +62,7 @@ Page({
         const filePath = res.tempFilePaths[0]
         
         // 上传图片
-        const cloudPath = 'articleImages/article-image' + that.wxuuid() + filePath.match(/\.[^.]+?$/)[0]
+        const cloudPath = 'wikiImage/wiki-image' + that.wxuuid() + filePath.match(/\.[^.]+?$/)[0]
         wx.cloud.uploadFile({
           cloudPath,
           filePath,

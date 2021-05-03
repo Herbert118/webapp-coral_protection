@@ -5,6 +5,7 @@
     "pages/wiki/wiki",
     "pages/wiki/wikiDetail/wikiDetail",
     "pages/questions/questions",
+    "pages/questions/questionsDetail/questionsDetail",
     "pages/wiki/wikiForm/wikiForm",
     "pages/questions/questionsForm/questionsForm"
   ],

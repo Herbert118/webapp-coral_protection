@@ -1,1 +1,34 @@
-/* pages/questions/questions.wxss */
+.page{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page_title{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  margin:40rpx 0;
+  height:100rpx;
+  border-top:solid 2rpx rgba(0, 0, 0, 0.1);
+  border-bottom:solid 2rpx rgba(0, 0, 0, 0.1);
+  font-size:50rpx;
+  color:  rgba(43, 156, 248, 0.986);
+}
+
+.info{
+  text-align: center;
+  font-size:40rpx;
+  color:rgba(43, 156, 248, 0.986)
+}
+.test{
+  display: flex;
+  justify-content: center;
+  margin:50rpx;
+}
+
+.test button{
+  background-color: rgba(43, 156, 248, 0.986)!important;
+}

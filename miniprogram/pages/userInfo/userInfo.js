@@ -1,19 +1,69 @@
 // pages/userInfo/userInfo.js
+const app = getApp()
 Page({
-
+ 
   /**
    * 页面的初始数据
    */
   data: {
-
+    avatarUrl: './user-unlogin.png',
+    userInfo: {},
+    hasUserInfo: false,
+    logged: false,
+    takeSession: false,
+    requestResult: '',
+    canIUseGetUserProfile: false,
+    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl')
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad: function() {
+    
+    if (wx.getUserProfile) {
+      this.setData({
+        canIUseGetUserProfile: true,
+      })
+      this.getUserProfile();
+      console.log("what the hell")
+    }
   },
+
+  getUserProfile() {
+  
+    wx.getUserProfile({
+      desc: '展示用户信息', 
+      success: (res) => {
+        console.log(res);
+        this.setData({
+          avatarUrl: res.userInfo.avatarUrl,
+          userInfo: res.userInfo,
+          hasUserInfo: true,
+        })
+        
+      }
+    })
+  },
+
+  
+
+  onGetOpenid: function() {
+    // 调用云函数
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        console.log('[云函数] [login] user openid: ', res.result.openid)
+        app.globalData.openid = res.result.openid
+        
+      },
+      fail: err => {
+        console.error('[云函数] [login] 调用失败', err)
+        wx.navigateTo({
+          url: '../deployFunctions/deployFunctions',
+        })
+      }
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

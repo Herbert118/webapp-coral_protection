@@ -9,7 +9,7 @@
   width:100%;
   background-color: cornflowerblue;
   height: 100rpx;
-  display:flex ;
+  display:flex ;  
   justify-content: center;
   align-items: center;
 }

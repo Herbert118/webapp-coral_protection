@@ -1,1 +1,30 @@
-/* pages/userInfo/userInfo.wxss */
+.page{
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center; 
+}
+.page_head {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width:100%;
+  background-color: turquoise;
+}
+.imagecon{
+  height:200rpx;
+  width: 200rpx;
+  margin-top:30rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+.namecon{
+  text-align: center;
+  font-size: 40rpx;
+  color: white;
+}
+
+.feedback button{
+  margin:50rpx;
+  background-color: turquoise!important;
+}

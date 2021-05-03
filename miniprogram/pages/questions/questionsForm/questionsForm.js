@@ -1,42 +1,40 @@
-// pages/test1/pages/test1/test3/articleForm/articleForm.js
+// pages/test1/pages/test1/test3/questionForm/questionForm.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    formInfo:{
-      body:"", 
-      title:"",
-      abstract:""
-    },
-    imgUrls:[],
+    formInfo:{},
+    imgUrl:"",
     counts:0,
   },
 
   async formSubmit(e){
     console.log(e.detail.value);
+    var info = e.detail.value;
+    var choices = []
+    for(var i = 0; i<4;i++){
+      choices.push(info["choice_"+i])
+    }
+    console.log(choices)
     var that = this;
     that.setData({
-      formInfo:e.detail.value
+      formInfo:{
+        question:info.question,
+        choices:choices.join("_")
+      }
     })
-    if((this.data.formInfo.body.split("_").length) != that.data.imgUrls.length){
-      wx.showToast({
-        title:"请保持图片数与段落数一致!",
-        duration:2000
-      })
-      return;  
-    }
+    
     const db = wx.cloud.database()
-    var counts = await db.collection("articles").count();
+    var counts = await db.collection("questions").count();
     console.log(counts.total);
-    db.collection("articles").add({  
+    db.collection("questions").add({  
       data:{
         _id:counts.total+1+"", 
-        title:that.data.formInfo.title,
-        abstract:that.data.formInfo.abstract,
-        body:that.data.formInfo.body,
-        imgRoute:that.data.imgUrls.join("_")
+        question:that.data.formInfo.question,
+        choices:that.data.formInfo.choices,
+        imgRoute:that.data.imgUrl
       }}).then((res)=>{
         console.log(res);
         wx.navigateBack({
@@ -48,9 +46,8 @@ Page({
   // 上传图片
   doUpload: function () {
     // 选择图片
-
+  
     var that = this ;
-    var imgs = that.data.imgUrls;
     wx.chooseImage({ 
       count: 1,
       sizeType: ['compressed'],
@@ -63,19 +60,16 @@ Page({
         const filePath = res.tempFilePaths[0]
         
         // 上传图片
-        const cloudPath = 'articleImages/article-image' + that.wxuuid() + filePath.match(/\.[^.]+?$/)[0]
+        const cloudPath = 'questionImages/question-image' + that.wxuuid() + filePath.match(/\.[^.]+?$/)[0]
         wx.cloud.uploadFile({
           cloudPath,
           filePath,
           success: res => {
-            
             console.log('[上传文件] 成功：', res)
-            imgs.push(res.fileID)
             that.setData({
-              imgUrls:imgs
+              imgUrl: res.fileID
             });
-             console.log(that.data.imgUrls);
-             console.log("what the hell");
+             console.log(that.data.imgUrl);
           },
           fail: e => {
             console.error('[上传文件] 失败：', e)

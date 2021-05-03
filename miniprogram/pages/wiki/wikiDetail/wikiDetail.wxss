@@ -1,0 +1,26 @@
+/* pages/test1/pages/test1/test3/article/article.wxss */
+.page{
+  display:flex;
+  flex-direction:column;
+  align-items:center
+}
+.page .page_title{
+  text-align: center;
+  font-size:70rpx;
+  margin-top:50rpx ;
+  color: dodgerblue;
+}
+.page .page_body{
+  margin-left:30rpx;
+  margin-right:30rpx;
+  padding:50rpx,50rpx;
+  text-align: left;
+  line-height: 200%;
+  width: 90%;
+  color: cornflowerblue;
+}
+
+.page_body image{
+  width:100%;
+  margin:50rpx 0;
+}

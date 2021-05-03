@@ -1,18 +1,39 @@
-// pages/news/news.js
+// pages/wiki/wikiDetail/wikiDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    name:"",
+    paras:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options);
+    var wikiId = options.id;
+    var that = this;
+    wx.cloud.callFunction({
+      name:"wiki", 
+      data:{
+        wikiId:wikiId
+      },
+      success(res){
+        console.log(res);
+        that.setData({
+          name:res.result.name,
+          paras:res.result.paras
+        })
+      },
+      fail(err){
+        console.log(err);
+      }
 
+
+    })
   },
 
   /**

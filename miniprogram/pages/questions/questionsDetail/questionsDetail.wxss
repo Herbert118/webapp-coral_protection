@@ -1,0 +1,93 @@
+.page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.page_head{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin:40rpx 0;
+  border-top:solid 3rpx;
+  border-top:solid 2rpx rgba(0, 0, 0, 0.1);
+  border-bottom:solid 2rpx rgba(0, 0, 0, 0.1);
+  height: 350rpx;
+}
+
+.page_ques{
+  font-size: 35rpx;
+  color:rgba(43, 156, 248, 0.986);
+  padding:30rpx 50rpx;
+  height:100rpx;
+}
+.page_head .imagecon{
+  height: 250rpx;
+  width:250rpx;
+  overflow: hidden;
+}
+.page_head image{
+  height:100%;
+}
+
+.choicecon{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choicecon .choice{
+  width:80%;
+  margin:20rpx 0;
+  background: white;
+  border-radius: 10rpx;
+  height: 100rpx;
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.choice .choicetext{
+  width:100%;
+  text-align: center;
+}
+
+
+radio .wx-radio-input{
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  border: solid rgb(0, 174, 255) 2rpx;
+  background: none;
+ 
+  }
+  
+  radio .wx-radio-input.wx-radio-input-checked{
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  border:solid rgb(0, 174, 255) 2rpx!important;
+  background: rgb(0, 174, 255) !important;
+  
+  }
+
+  .btnarea{
+    margin:30rpx 0;
+    width:100%;
+    display:flex;
+    justify-content: center;
+  }
+  .btnarea button{
+    background-color:rgb(0, 174, 255)!important;
+  }
+ 
+  .right{
+    background-color: rgb(150, 243, 186)!important;
+  }
+
+  .wrong{
+    background-color:rgb(255, 200, 200)!important;
+  }
+  
+   

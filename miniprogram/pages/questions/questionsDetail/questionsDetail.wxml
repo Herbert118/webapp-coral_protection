@@ -1,0 +1,32 @@
+<view class = "page">
+  <view class = "page_head">
+    <view class = "page_ques">
+      <text>{{question}}</text>
+    </view>
+    <view class = "imagecon">
+      <image src = "{{imgRoute}}" mode = "heightFix"></image>
+    </view>
+  </view>
+  <form bindsubmit="check" style = "width:100%">  
+    <radio-group name = "choices"  class = "choicecon">
+    <label wx:for="{{choices}}"  wx:key = "index" 
+    class = "choice {{index == wrongIndex?'wrong':''}} {{index == rightIndex?'right':''}}">
+        
+        <radio value = "{{index}}"></radio>
+        <text style ="color:darkblue">{{item.char}}</text>
+        <view class = "choicetext">{{item.choice}}</view>
+      </label>
+
+   
+    
+  </radio-group>
+
+  <view class = "btnarea">
+    <button type = "primary" form-type="submit" wx:if="{{!ifconfirm&&!ifnomore}}">确认</button>
+    <button type = "primary" bindtap = "next" wx:if="{{ifconfirm}}">下一题</button>
+    
+  </view>
+</form>
+  
+
+</view>
