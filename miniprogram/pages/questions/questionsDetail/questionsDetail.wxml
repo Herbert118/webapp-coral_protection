@@ -22,7 +22,7 @@
   </radio-group>
 
   <view class = "btnarea">
-    <button type = "primary" form-type="submit" wx:if="{{!ifconfirm&&!ifnomore}}">确认</button>
+    <button type = "primary" form-type="submit" wx:if="{{!ifconfirm&&!ifnomore&&ifready}}">确认</button>
     <button type = "primary" bindtap = "next" wx:if="{{ifconfirm}}">下一题</button>
     
   </view>

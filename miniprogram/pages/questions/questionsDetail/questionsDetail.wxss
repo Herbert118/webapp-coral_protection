@@ -17,7 +17,7 @@
 
 .page_ques{
   font-size: 35rpx;
-  color:rgba(43, 156, 248, 0.986);
+  color:#00B6FF;
   padding:30rpx 50rpx;
   height:100rpx;
 }

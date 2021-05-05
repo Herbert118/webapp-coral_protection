@@ -1,18 +1,16 @@
-<view class = "page">
-  <view class = "page_title"> 
+<view class="page">
+  <view class="page_title">
     <text>知识问答</text>
   </view>
-  
-  <view class = "info">
+
+  <view class="info">
     <text>来试一试你对珊瑚有多了解吧！</text>
   </view>
-  <view class = "test"> 
-    <button type ="primary" bindtap = "navToDetail">开始答题</button>
+  <view class="test">
+    <button type="primary" bindtap="navToDetail">开始答题</button>
   </view>
-  <view class = "test">
-    <button type = "primary" bindtap = "navToForm">管理问答</button>
+  <view class="test">
+    <!--管理界面，仅当开发环境可访问-->
+    <button type="primary" bindtap="navToForm" wx:if="{{canDoUpload}}">管理问答</button>
   </view>
 </view>
-
-
-

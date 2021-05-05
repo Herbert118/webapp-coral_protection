@@ -4,9 +4,11 @@
     {{title}}
   </view>
   <view class = "page_body">
+    <!--根据段落渲染 每段一张图片与一段文字-->
     <block wx:for = "{{paras}}" wx:key wx:for-item="item" wx:for-index="index" wx:key="index">
     <image src = "{{item.img}}" mode="widthFix"></image>
     <text>{{item.text}}</text>
     </block>
+
   </view>
 </view>

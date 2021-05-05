@@ -10,10 +10,14 @@
         </view>
       
   </view>
+
   
-  <view class = "feedback">
-    <button open-type="feedback" type = "primary">意见反馈</button>
-  </view>
+        <view class="weui-cells weui-cells_after-title" style="width:80%;margin:50rpx ">
+            <button open-type="feedback" class="weui-cell weui-cell_access" style="background-color:#00B6FF;border-radius:12rpx;width:100%" hover-class="weui-cell_active">
+                <view class="weui-cell__bd" style="color:white; font-weight:bold;">意见反馈</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </button>
+        </view>
 
 
 

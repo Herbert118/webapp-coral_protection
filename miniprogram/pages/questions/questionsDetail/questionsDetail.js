@@ -4,15 +4,16 @@ Page({
 
   data: {
     ifnomore:false,
-    quesIds: [],
-    choices: [],
-    correct: 0,
+    ifconfirm:false,
+    ifready:false, //以上均为了视图反应,其中ifready是为了防止button因延迟比别的先出现
+    quesIds: [],//记录已做题的id,防止延迟
+    choices: [],//记录选项
+    correct: 0,//记录正确的序号(下标)
     question: "",
     imgRoute:"",
     rightNum:0,
-    ifconfirm:false,
     rightIndex:-1,
-    wrongIndex:-1,
+    wrongIndex:-1,//回答后视图响应
   },
 
 
@@ -56,12 +57,15 @@ Page({
         for(var i = 0; i< preChoices.length;i++){
           temp.push({
             choice:preChoices[i],
-            char:String.fromCharCode(i+65)
+            char:String.fromCharCode(i+65)//大写字母
           })
         }
+
         that.setData({
-          choices: temp
+          choices: temp,
+          ifready:true
         })
+
         //记录题目id
         that.data.quesIds.push(res.result.ques._id);
       },
@@ -72,6 +76,7 @@ Page({
   },
 
   check(e){
+    //检查答案
     var that = this;
     var answer = e.detail.value.choices;
     console.log(answer);
@@ -91,6 +96,7 @@ Page({
     console.log(that.data)
   },
   next(){
+    //视图重置
     this.setData({
     choices: [],
     correct: 0,
@@ -100,6 +106,7 @@ Page({
     ifconfirm:false,
     rightIndex:-1,
     wrongIndex:-1,
+    ifready:false,
     })
     this.onLoad()
   },

@@ -12,16 +12,16 @@
   width:100%;
   margin:40rpx 0;
   height:100rpx;
-  border-top:solid 2rpx rgba(0, 0, 0, 0.1);
-  border-bottom:solid 2rpx rgba(0, 0, 0, 0.1);
+  border-top:solid 2rpx rgba(0, 0,  256, 0.1);
+  border-bottom:solid 2rpx rgba(0, 0, 256, 0.1);
   font-size:50rpx;
-  color:  rgba(43, 156, 248, 0.986);
+  color:  rgba(0, 182, 256);
 }
 
 .info{
   text-align: center;
   font-size:40rpx;
-  color:rgba(43, 156, 248, 0.986)
+  color:rgba(0, 182, 256)
 }
 .test{
   display: flex;
@@ -30,5 +30,5 @@
 }
 
 .test button{
-  background-color: rgba(43, 156, 248, 0.986)!important;
+  background-color: rgba(0, 182, 256)!important;
 }

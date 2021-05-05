@@ -1,7 +1,9 @@
 <view class="page">
-  <view class="page__bd">
-    <view class="weui-search-bar {{inputShowed ? 'weui-search-bar_focusing' : ''}}" id="searchBar">
-      <form class="weui-search-bar__form">
+  <view class="page__bd"  style="width:100%;background-color:#00B6FF; padding-top:50rpx">
+    <!--搜索框 来自weui-->
+    <view class="weui-search-bar {{inputShowed ? 'weui-search-bar_focusing' : ''}}" id="searchBar" 
+    style="background-color:#00B5FF; width:100%">
+      <form class="weui-search-bar__form" >
         <view class="weui-search-bar__box">
           <i class="weui-icon-search"></i>
           <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}"
@@ -17,26 +19,31 @@
     </view>
   </view>
 
-  <view class = "test">
-    <button bindtap="navToForm" type = "primary" style = "background-color:rgb(119, 164, 247)">管理百科</button>
+  <view class="test">
+    <!--管理界面，仅当开发环境可访问-->
+    <button bindtap="navToForm" type="primary" style="background-color:rgb(0, 182, 255)"
+      wx:if="{{canDoUpload}}">管理百科</button>
   </view>
 
-  <view class = "page_title">
+  <view class="page_title">
     <text>珊瑚百科</text>
   </view>
 
-  <view class = "page_body">
-    
-      <view class ="wikicon" wx:for="{{wikis}}" wx:key = "index">
-        <view class = "imagecon">
-          <image src = "{{item.imgRoute}}" mode = "heightFix"></image>
-        </view>
-        <view class = "name">
-        <text>{{item.name}}</text>
-        </view>
+  <view class="page_body"> 
+    <!--列表渲染百科-->
+    <view class="wikicon" wx:for="{{wikis}}" wx:key="index" bindtap="navToWiki" 
+    id="{{wikis.length-index}}" wx:if="{{item.ifshow}}"> 
+      <view class="imagecon">
+        <image src="{{item.imgRoute}}" mode="heightFix"></image>
       </view>
+      <view class="name">
+        <text>{{item.name}}</text>
+      </view>
+    </view>
 
-  
+
   </view>
-
+  <view class="page_waiting">
+    <text>等待更新...</text>
+  </view>
 </view>

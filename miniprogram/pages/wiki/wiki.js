@@ -1,12 +1,14 @@
-
+const app = getApp()
 // pages/wiki/wiki.js
 Page({
 
  
   data: {
+    
     inputShowed: false,
     inputVal: "",
-    wikis:[]
+    wikis:[],
+    canDoUpload:false,
   },
 
   showInput: function () {
@@ -19,16 +21,42 @@ hideInput: function () {
       inputVal: "",
       inputShowed: false
   });
+  this.showAll()
 },
 clearInput: function () {
   this.setData({
       inputVal: ""
   });
+  this.showAll()
 },
 inputTyping: function (e) {
+  var str = e.detail.value
   this.setData({
-      inputVal: e.detail.value
+      inputVal: str
   });
+  var wikis = this.data.wikis;
+  for(var i = 0; i<wikis.length; i++){
+    console.log(wikis[i].name.search(str));
+    if(wikis[i].name.search(str)<0){
+      wikis[i].ifshow = false;
+    }
+    else{
+      wikis[i].ifshow = true;
+    }
+    
+  }
+  this.setData({
+    wikis:wikis
+  })
+},
+showAll(){
+  var wikis = this.data.wikis
+  for(var i = 0; i<wikis.length; i++){
+    wikis[i].ifshow = true
+  }
+  this.setData({
+    wikis:wikis
+  })
 },
 navToForm(){
   wx.navigateTo({
@@ -45,6 +73,9 @@ navToWiki(e){
 
   onLoad: function (options) {
     var that = this;
+    that.setData({
+      canDoUpload : app.globalData.canDoUpload
+    })
     wx.cloud.callFunction({
       name:"wiki",
       data:{
@@ -53,7 +84,7 @@ navToWiki(e){
       success(res){
         console.log(res)
         that.setData({
-          wikis:res.result.wikis
+          wikis:res.result.wikis.reverse()
         })
       },
       fail(err){
@@ -69,16 +100,12 @@ navToWiki(e){
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
+  
   onShow: function () {
-    this.onLoad();
+  
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
+  
   onHide: function () {
 
   },

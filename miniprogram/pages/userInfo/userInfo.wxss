@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   width:100%;
-  background-color: turquoise;
+  background-color: #00B6FF;
 }
 .imagecon{
   height:200rpx;
@@ -26,5 +26,5 @@
 
 .feedback button{
   margin:50rpx;
-  background-color: turquoise!important;
+  background-color: #00B6FF!important;
 }

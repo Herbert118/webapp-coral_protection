@@ -17,14 +17,6 @@
   width:100%;
 }
 
-.page_head .title{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: sans-serif;
-  color:white;
-  background-color: rgba(14, 165, 235, 0.849);
-}
 
 
 .page_title{
@@ -37,7 +29,7 @@
   border-top:solid 2rpx rgba(0, 0, 0, 0.1);
   border-bottom:solid 2rpx rgba(0, 0, 0, 0.1);
   font-size:50rpx;
-  color: rgba(14, 165, 235, 0.849);
+  color: rgba(0, 182, 256);
 }
 
 
@@ -51,9 +43,9 @@
 }
 .article{
   width:85%;
-  height: 300rpx;
+  height: 320rpx;
   border-radius: 10px; 
-  background-color: rgb(177, 234, 248);
+  background-color: rgba(177, 234, 248,0.5);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -65,13 +57,14 @@
 .article .title{
   width:100%;
   height: 50rpx;
-  font:  bold  20rpx;
-  color:rgb(13, 90, 235);
-  margin:20rpx 0 0 50rpx ;
+  font-size: 35rpx;
+  font-weight: 500;
+  color:rgba(0, 182, 256);
+  margin:20rpx 0 0 30rpx ;
 }
 .article .imagescon{
   width:250rpx;
-  margin:0 20rpx
+  margin:0 30rpx
   
   
 }
@@ -88,15 +81,20 @@
   font-size:13px;
 
 }
+.article .foot{
+  height: 20rpx;
+  display: block;
+}
 
 .test{
   margin-top :50rpx;
 }
 
-.page_foot{
+.page_waiting{
   width: 70%;
   text-align: center;
   margin:50rpx;
-  color: rgb(7, 127, 182);
-  border-top:solid rgba(0, 0, 0, 0.1) 2rpx
+  color: rgba(0, 182, 256);
+  border-top:solid rgba(0, 0, 256, 0.1) 2rpx
+  
 }

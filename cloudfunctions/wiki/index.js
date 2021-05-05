@@ -20,7 +20,8 @@ exports.main = async (event, context) => {
     for(var key = 0;key < preResult.length;key++){
       wikis.push({
         name:preResult[key].name,
-        imgRoute:preResult[key].imgRoute.split("_",10)[0]
+        imgRoute:preResult[key].imgRoute.split("_",10)[0],
+        ifshow:true
       })
     }
   

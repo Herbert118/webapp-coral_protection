@@ -12,14 +12,17 @@
   </view>
 
   <view class="test">
-    <button type="primary" wx:if="testing" bindtap="navToForm" style="background-color:#0ea5ebd8">管理科普文章</button>
+    <!--管理界面，仅当开发环境可访问-->
+    <button type="primary" wx:if="testing" bindtap="navToForm" style="background-color:#0ea5ebd8"
+      wx:if="{{canDoUpload}}">管理科普文章</button>
   </view>
 
   <view class="page_title">
     <text>科普文章</text>
   </view>
-
-  <view class="articlecon" bindtap="navtoarticle" wx:for="{{articles}}" wx:for-index="index" id="{{index+1}}" wx:key="index">
+  <!--列表渲染文章-->
+  <view class="articlecon" bindtap="navtoarticle" wx:for="{{articles}}" wx:for-index="index" id="{{articles.length-index}}"
+    wx:key="index">
     <view class="article">
       <view class="title">
         <text>{{item.title}}</text>
@@ -32,15 +35,15 @@
         <view class="abstract">
           <text>{{item.abstract}}</text>
         </view>
+      </view>
+      
+      <view class="foot">
 
-        <view>
-
-        </view>
       </view>
     </view>
   </view>
 
-  <view class = "page_foot">
+  <view class="page_waiting">
     <text>等待更新...</text>
   </view>
 

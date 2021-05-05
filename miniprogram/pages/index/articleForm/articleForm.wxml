@@ -17,17 +17,18 @@
         <view class="section_title">
           <text>abstract</text>
         </view>
-        <input placeholder="输入文章概括" value="{{formInfo.abstract}}" name="abstract" ></input>
+        <input placeholder="输入文章概括" value="{{formInfo.abstract}}" name="abstract"></input>
       </view>
 
       <view class="section section_gap">
         <view class="section_title">
           <text>body</text>
         </view>
-        <textarea placeholder="输入文章内容,段与段间用'_'分隔,请保持段落数与图片数一致" value="{{formInfo.body}}" name="body" maxlength="1000"></textarea>
+        <textarea placeholder="输入文章内容,段与段间用'_'分隔,请保持段落数与图片数一致" value="{{formInfo.body}}" name="body"
+          maxlength="1000"></textarea>
       </view>
 
-      <view class = "section section_gap">
+      <view class="section section_gap">
         <button bindtap="doUpload" type="primary">上传图片</button>
         <view class="uploader-container" wx:for="{{imgUrls}}">
           <image class="uploader-image" src="{{item}}" mode="aspectFit"></image>

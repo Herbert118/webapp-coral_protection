@@ -1,9 +1,10 @@
+const app = getApp()
 // pages/questions/questions.js
 Page({
 
 
   data: {
-
+    canDoUpload:false
   },
 
   navToForm(){
@@ -19,7 +20,9 @@ Page({
 
 
   onLoad: function (options) {
-
+    this.setData({
+      canDoUpload : app.globalData.canDoUpload
+    })
   },
 
   

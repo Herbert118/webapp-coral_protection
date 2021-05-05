@@ -58,10 +58,10 @@ Page({
       success: function (res) {
         wx.showLoading({
           title: '上传中',
-        })
-
+        }) 
+ 
         const filePath = res.tempFilePaths[0]
-        
+           
         // 上传图片
         const cloudPath = 'articleImages/article-image' + that.wxuuid() + filePath.match(/\.[^.]+?$/)[0]
         wx.cloud.uploadFile({
